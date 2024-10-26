@@ -6,7 +6,7 @@ class Calculation
 public:
 Calculation(){}
 virtual ~Calculation() {}
-int FuncA(int x);
+double FuncA(double x, int n);
 };
 #endif
 
