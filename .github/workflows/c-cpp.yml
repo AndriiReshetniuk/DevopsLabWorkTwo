@@ -2,11 +2,11 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "branchMake" ]
+    branches: [ "branchAutoMake" ]
   pull_request:
-    branches: [ "branchMake" ]
+    branches: [ "branchAutoMake" ]
   workflow_dispatch:
-    branch: [ "branchMake" ]
+    branch: [ "branchAutoMake" ]
 
 jobs:
   build:
