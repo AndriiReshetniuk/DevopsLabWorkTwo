@@ -2,11 +2,11 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "branchAutoMake" ]
+    branches: [ "branchAutomake" ]
   pull_request:
-    branches: [ "branchAutoMake" ]
+    branches: [ "branchAutomake" ]
   workflow_dispatch:
-    branch: [ "branchAutoMake" ]
+    branches: [ "branchAutomake" ]
 
 jobs:
   build:
@@ -19,5 +19,5 @@ jobs:
       run: ./configure
     - name: make
       run: make
-      name: Build tarball distribution file
+    - name: Build tarball distribution file
       run: make dist
