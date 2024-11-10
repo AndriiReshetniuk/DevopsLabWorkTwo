@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <math.h>
 
-double fact(int number)
+double fact(int number) //Function which find factorial of the number
 {
 int result = 1;
 for(int i = 1; i<=number; i++)
