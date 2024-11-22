@@ -1,0 +1,5 @@
+Package: Calculation
+Version: 0.1
+Architecture: all
+Maintainer: andriyreshet@gmail.com
+Description:Calculating sum of the first n elements of an infinite sequence
