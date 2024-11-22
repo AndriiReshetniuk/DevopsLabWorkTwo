@@ -2,11 +2,11 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "branchAutomake" ]
+    branches: [ "branchAutoPackage" ]
   pull_request:
-    branches: [ "branchAutomake" ]
+    branches: [ "branchAutoPackage" ]
   workflow_dispatch:
-    branches: [ "branchAutomake" ]
+    branches: [ "branchAutoPackage" ]
 
 jobs:
   build:
@@ -21,3 +21,5 @@ jobs:
       run: make
     - name: Build tarball distribution file
       run: make dist
+    - name: Build deb package
+      run: sudo rm -r deb && sudo make deb && dpkg-deb --build deb
