@@ -26,9 +26,7 @@ jobs:
       run: docker buildx ls
 
     - name: Log in to dockerhub
-      run: echo "${{ secrets.DOCKER_TOKEN }}" | docker login -u "${{ vars.DOCKER_USERNAME }}" --password-stdin
-    
-
+      run: docker login -u ${{ vars.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}    
       
     - name: configure
       run: ./configure
