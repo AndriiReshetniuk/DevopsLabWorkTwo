@@ -1,10 +1,10 @@
 AUTOMAKE_OPTIONS = foreign
 bin_PROGRAMS = Calculation
-Calculation_SOURCES = main.cpp Calculation.cpp Calculation.h
+Calculation_SOURCES = main.cpp Calculation.cpp Calculation.h HTTP_Server.cpp
 dist_man_MANS = Calculation.1
 dist_pkgdata_DATA = data.txt
 
-SUBDIR = tests
+SUBDIRS = tests
 
 CTRLF_DIR=$(CURDIR)/deb/DEBIAN
 CTRLF_NAME = $(CTRLF_DIR)/control

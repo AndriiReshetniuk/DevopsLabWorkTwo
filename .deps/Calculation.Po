@@ -1,5 +1,5 @@
-../Calculation.o: ../Calculation.cpp /usr/include/stdc-predef.h \
- ../Calculation.h /usr/include/stdio.h \
+Calculation.o: Calculation.cpp /usr/include/stdc-predef.h Calculation.h \
+ /usr/include/stdio.h \
  /usr/include/x86_64-linux-gnu/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
  /usr/include/x86_64-linux-gnu/bits/wordsize.h \
@@ -101,7 +101,7 @@
  /usr/include/c++/13/tr1/poly_laguerre.tcc \
  /usr/include/c++/13/tr1/riemann_zeta.tcc
 /usr/include/stdc-predef.h:
-../Calculation.h:
+Calculation.h:
 /usr/include/stdio.h:
 /usr/include/x86_64-linux-gnu/bits/libc-header-start.h:
 /usr/include/features.h:
