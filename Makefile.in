@@ -107,6 +107,8 @@ am_Calculation_OBJECTS = main.$(OBJEXT) Calculation.$(OBJEXT) \
 	HTTP_Server.$(OBJEXT)
 Calculation_OBJECTS = $(am_Calculation_OBJECTS)
 Calculation_LDADD = $(LDADD)
+Calculation_LINK = $(CXXLD) $(AM_CXXFLAGS) $(CXXFLAGS) \
+	$(Calculation_LDFLAGS) $(LDFLAGS) -o $@
 AM_V_P = $(am__v_P_@AM_V@)
 am__v_P_ = $(am__v_P_@AM_DEFAULT_V@)
 am__v_P_0 = false
@@ -361,6 +363,7 @@ top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 AUTOMAKE_OPTIONS = foreign
 Calculation_SOURCES = main.cpp Calculation.cpp Calculation.h HTTP_Server.cpp
+Calculation_LDFLAGS = -static
 dist_man_MANS = Calculation.1
 dist_pkgdata_DATA = data.txt
 SUBDIRS = tests
@@ -448,7 +451,7 @@ clean-binPROGRAMS:
 
 Calculation$(EXEEXT): $(Calculation_OBJECTS) $(Calculation_DEPENDENCIES) $(EXTRA_Calculation_DEPENDENCIES) 
 	@rm -f Calculation$(EXEEXT)
-	$(AM_V_CXXLD)$(CXXLINK) $(Calculation_OBJECTS) $(Calculation_LDADD) $(LIBS)
+	$(AM_V_CXXLD)$(Calculation_LINK) $(Calculation_OBJECTS) $(Calculation_LDADD) $(LIBS)
 
 mostlyclean-compile:
 	-rm -f *.$(OBJEXT)

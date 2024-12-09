@@ -2,11 +2,11 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "branchAutomake" ]
+    branches: [ "branchHTTPserver" ]
   pull_request:
-    branches: [ "branchAutomake" ]
+    branches: [ "branchHTTPserver" ]
   workflow_dispatch:
-    branches: [ "branchAutomake" ]
+    branches: [ "branchHTTPserver" ]
 
 jobs:
   build:
@@ -15,9 +15,25 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+    
+    - name: QEMU instalation
+      uses: docker/setup-qemu-action@v3
+      
+    - name: Docker Buildx installation
+      uses: docker/setup-buildx-action@v1
+
+    - name: build ls
+      run: docker buildx ls
+
+    - name: Log in to dockerhub
+      run: docker login -u ${{ vars.DOCKER_USERNAME }} -p ${{ secrets.DOCKER_TOKEN }}    
+
+      
     - name: configure
       run: ./configure
+    
     - name: make
       run: make
-    - name: Build tarball distribution file
-      run: make dist
+   
+    - name: autotest
+      run: cd ./tests && make check
