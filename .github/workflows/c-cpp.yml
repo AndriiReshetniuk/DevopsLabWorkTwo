@@ -2,11 +2,11 @@ name: C/C++ CI
 
 on:
   push:
-    branches: [ "branchHTTPserver" ]
+    branches: [ "branchHTTPservMutli" ]
   pull_request:
-    branches: [ "branchHTTPserver" ]
+    branches: [ "branchHTTPservMutli" ]
   workflow_dispatch:
-    branches: [ "branchHTTPserver" ]
+    branches: [ "branchHTTPservMutli" ]
 
 jobs:
   build:
